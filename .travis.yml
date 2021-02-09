@@ -17,14 +17,14 @@ install:
 - pip install -r requirements.txt
 - pip install codacy-coverage
 - pip install coverage
-- pip install corsheaders
+- pip install django-cors-headers
 - pip install selenium
 - pip install webdriver-manager
 script:
 - cd decide
 - sudo apt-get install firefox
 - cp travis_local_settings.py local_settings.py
-- coverage run --branch --source=. ./manage.py test store
+- coverage run --branch --source=. ./manage.py test 
   --keepdb
 - coverage xml
 - python-codacy-coverage -r coverage.xml
